@@ -1,0 +1,31 @@
+---
+import logo from '$assets/logo.svg';
+import { NAVIGATION_ITEMS } from '$data/navigation';
+
+import styles from './Navbar.module.css';
+---
+
+<header class={styles.header}>
+  <div class:list={['container', [styles.container]]}>
+    <a href="#" class={styles.logo}>
+      <img class={styles.logoSvg} src={logo} alt="Easybank Logo" />
+    </a>
+    <nav class={styles.nav} aria-label="Primary">
+      <button aria-controls="nav-items" aria-expanded="false" class={styles.navToggle}>
+        <span class="sr-only">Menu</span>
+      </button>
+      <ul id="nav-items" class={styles.navItems}>
+        {
+          NAVIGATION_ITEMS.map((item) => (
+            <li class={styles.navItem}>
+              <a class={styles.navLink} href={item.href}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <button class={styles.cta}>Request Invite</button>
+  </div>
+</header>
