@@ -8,12 +8,12 @@ import styles from './Navbar.module.css';
 <header class={styles.header}>
   <div class:list={['container', [styles.container]]}>
     <a href="#" class={styles.logo}>
-      <img class={styles.logoSvg} src={logo} alt="Easybank Logo" />
+      <img src={logo} alt="Easybank Logo" />
     </a>
-    <nav class={styles.nav} aria-label="Primary">
-      <button aria-controls="nav-items" aria-expanded="false" class={styles.navToggle}>
-        <span class="sr-only">Menu</span>
-      </button>
+    <button id="nav-toggle" aria-controls="nav-items" aria-expanded="false" class={styles.navToggle}>
+      <span class="sr-only">Menu</span>
+    </button>
+    <nav id="primary-nav" data-visible="false" class={styles.nav} aria-label="Primary">
       <ul id="nav-items" class={styles.navItems}>
         {
           NAVIGATION_ITEMS.map((item) => (
@@ -26,6 +26,19 @@ import styles from './Navbar.module.css';
         }
       </ul>
     </nav>
-    <button class={styles.cta}>Request Invite</button>
+    <button class:list={['btn-gradient', [styles.cta]]}>Request Invite</button>
   </div>
 </header>
+
+<script>
+  const nav = document.getElementById('primary-nav') as HTMLDivElement;
+  const navToggle = document.getElementById('nav-toggle') as HTMLButtonElement;
+
+  const handleNavToggle = () => {
+    const next = navToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+    navToggle.setAttribute('aria-expanded', next);
+    nav.setAttribute('data-visible', next);
+  };
+
+  navToggle.addEventListener('click', handleNavToggle);
+</script>

@@ -2,6 +2,8 @@
 /* Custom Selectors  */
 /* ----------------- */
 
+@custom-media --mobile-nav (width < 768px);
+@custom-media --desktop-nav (width >= 768px);
 @custom-media --screen-tablet (width >= 640px);
 @custom-media --screen-desktop (width >= 1024px);
 
@@ -74,6 +76,12 @@
   --space-md: 1.5rem;
   --space-lg: 2rem;
   --space-xl: 2.5rem;
+
+  --gutters-inline: 1.5rem;
+
+  /* gradients */
+  --gradient-default: linear-gradient(135deg, #33d35e 0%, #2ab6d9 99.58%);
+  --gradient-primary: linear-gradient(180deg, #2d314d 0%, rgba(45, 49, 77, 0.0001) 100%);
 }
 
 @media (--screen-tablet) {
@@ -81,6 +89,11 @@
     --fs-heading-1: var(--fs-4xl);
     --fs-heading-2: var(--fs-3xl);
     --fs-heading-3: var(--fs-xl);
+  }
+}
+@media (--screen-desktop) {
+  :root {
+    --gutters-inline: 3rem;
   }
 }
 
@@ -183,6 +196,23 @@ a:not([class]) {
   margin-inline: auto;
 }
 
+.btn-gradient {
+  cursor: pointer;
+  padding-inline: var(--space-lg);
+  height: 44px;
+  border-radius: var(--br-lg);
+  color: hsl(var(--clr-neutral-100));
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  background: var(--gradient-default);
+  transition: opacity 250ms ease-in-out;
+}
+
+.btn-gradient:hover,
+.btn-gradient:focus-visible {
+  opacity: 0.4;
+}
+
 /* ----------------- */
 /* General styles    */
 /* ----------------- */
@@ -194,4 +224,8 @@ body {
   font-weight: var(--fw-normal);
   color: hsl(var(--clr-neutral-400));
   background-color: hsl(var(--clr-neutral-200));
+}
+
+*:focus-visible {
+  outline: var(--outline-focus-primary);
 }

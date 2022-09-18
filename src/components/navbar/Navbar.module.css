@@ -1,0 +1,119 @@
+.header {
+  background-color: hsl(var(--clr-neutral-100));
+  padding-inline: var(--gutters-inline);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  gap: var(--space-base);
+}
+
+.logo {
+  display: block;
+  align-self: center;
+}
+
+.navToggle {
+  display: none;
+}
+
+.navItems {
+  display: flex;
+  background-color: hsl(var(--clr-neutral-100));
+  border-radius: var(--br-base);
+}
+
+.navLink {
+  text-decoration: none;
+  display: grid;
+}
+
+.cta {
+  align-self: center;
+}
+
+@media (--mobile-nav) {
+  .container {
+    height: 64px;
+  }
+  .navToggle {
+    display: block;
+    align-self: center;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-image: url('../../assets/hamburger.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .navToggle[aria-expanded='true'] {
+    background-image: url('../../assets/close.svg');
+  }
+
+  .nav {
+    position: absolute;
+    inset-inline: 0;
+    inset-block: 64px 0;
+    background: var(--gradient-primary);
+    padding: 1.5rem;
+    transition: visibility 250ms, opacity 250ms ease-out;
+  }
+
+  .nav[data-visible='false'] {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .navItems {
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+
+  .navLink {
+    text-align: center;
+    font-size: var(--fs-md);
+    color: hsl(var(--clr-primary));
+  }
+
+  .cta {
+    display: none;
+  }
+}
+
+@media (--desktop-nav) {
+  .navItems,
+  .navLink {
+    height: 100%;
+  }
+
+  .navItems {
+    gap: var(--space-lg);
+  }
+  .navLink {
+    position: relative;
+    place-items: center;
+    transition: color 250ms linear;
+  }
+  .navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    inset-inline: 0;
+    height: 4px;
+    background: var(--gradient-default);
+    display: block;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 250ms linear;
+  }
+
+  .navLink:hover {
+    color: hsl(var(--clr-primary));
+  }
+  .navLink:hover::after {
+    transform: scaleX(1);
+  }
+}
