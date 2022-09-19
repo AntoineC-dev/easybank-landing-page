@@ -1,5 +1,4 @@
 .presentation {
-  /* border: 3px solid green; */
   display: grid;
   justify-items: center;
   text-align: center;
@@ -18,7 +17,6 @@
 }
 
 .illustration {
-  /* border: 3px solid plum; */
   position: relative;
   min-height: 18rem;
 }
@@ -38,7 +36,7 @@
   position: absolute;
   inset: 0;
   background-image: url('../../assets/mockups.png');
-  background-size: 327px;
+  background-size: min(92%, 327px);
   background-repeat: no-repeat;
   background-position: center bottom;
 }
