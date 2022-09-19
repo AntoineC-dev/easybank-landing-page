@@ -1,0 +1,17 @@
+---
+import styles from './Hero.module.css';
+---
+
+<section class={styles.hero}>
+  <div class:list={['container', [styles.container]]}>
+    <div class={styles.illustration}></div>
+    <div class={styles.presentation}>
+      <h1 class={styles.title}>Next generation<br />digital banking</h1>
+      <p class={styles.text}>
+        Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting,
+        investing, and much more.
+      </p>
+      <button class:list={['btn-gradient', [styles.cta]]}>Request Invite</button>
+    </div>
+  </div>
+</section>
