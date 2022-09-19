@@ -1,6 +1,7 @@
 .header {
   background-color: hsl(var(--clr-neutral-100));
   padding-inline: var(--gutters-inline);
+  z-index: 999;
 }
 
 .container {
