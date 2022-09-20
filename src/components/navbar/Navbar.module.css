@@ -111,10 +111,12 @@
     transition: transform 250ms linear;
   }
 
-  .navLink:hover {
+  .navLink:hover,
+  .navLink:focus-visible {
     color: hsl(var(--clr-primary));
   }
-  .navLink:hover::after {
+  .navLink:hover::after,
+  .navLink:focus-visible::after {
     transform: scaleX(1);
   }
 }
