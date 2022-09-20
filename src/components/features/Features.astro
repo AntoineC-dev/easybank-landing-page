@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 import { FEATURES } from '$data/features';
 
 import styles from './Features.module.css';
@@ -18,7 +19,7 @@ import styles from './Features.module.css';
         FEATURES.map((feature) => (
           <article class={styles.feature}>
             <div class={styles.featureImg}>
-              <img src={feature.image} alt="" />
+              <Icon name={feature.icon} />
             </div>
             <h3 class={styles.featureTitle}>{feature.title}</h3>
             <p class={styles.featureText}>{feature.text}</p>
