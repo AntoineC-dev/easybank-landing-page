@@ -15,7 +15,7 @@ import styles from './Footer.module.css';
       <div class={styles.socials}>
         {
           SOCIALS.map((social) => (
-            <a class={styles.socialLink} href={social.href}>
+            <a class={styles.socialLink} href={social.href} aria-label={social.label}>
               <Icon class={styles.socialSvg} name={social.icon} />
             </a>
           ))
