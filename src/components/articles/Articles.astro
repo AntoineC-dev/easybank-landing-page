@@ -14,8 +14,8 @@ import styles from './Articles.module.css';
             <img class={styles.articleImg} src={article.image.src} alt={article.image.alt} />
             <div class={styles.articleContent}>
               <span class={styles.articleAuthor}>By {article.author}</span>
-              <a href={article.slug} class={styles.articleTitle}>
-                {article.title}
+              <a href={article.slug} class={styles.articleLink}>
+                <h3 class={styles.articleTitle}>{article.title}</h3>
               </a>
               <p class={styles.articleText}>{article.text}</p>
             </div>

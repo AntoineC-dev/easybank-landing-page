@@ -38,11 +38,15 @@
   font-size: var(--fs-3xs);
 }
 
-.articleTitle {
+.articleLink {
   display: block;
   text-decoration: none;
   color: hsl(var(--clr-primary));
+}
+
+.articleTitle {
   font-weight: var(--fw-light);
+  line-height: var(--lh-base);
   font-size: var(--fs-base);
   transition: color 150ms linear;
 }
