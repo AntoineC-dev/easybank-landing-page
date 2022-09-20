@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon';
+import { FOOTER_NAVIGATION_ITEMS } from '$data/navigation';
+import { SOCIALS } from '$data/socials';
+
+import styles from './Footer.module.css';
+---
+
+<footer class={styles.footer}>
+  <div class:list={['container', [styles.container]]}>
+    <div class={styles.left}>
+      <a class={styles.logoLink} href="#" aria-label="Homepage">
+        <Icon class={styles.logoSvg} name="logo" />
+      </a>
+      <div class={styles.socials}>
+        {
+          SOCIALS.map((social) => (
+            <a class={styles.socialLink} href={social.href}>
+              <Icon class={styles.socialSvg} name={social.icon} />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <nav class={styles.nav} aria-label="Secondary">
+      <ul class={styles.navList}>
+        {
+          FOOTER_NAVIGATION_ITEMS.map((item) => (
+            <li class={styles.navItem}>
+              <a class={styles.navLink} href={item.href}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class={styles.right}>
+      <button class:list={['btn-gradient', [styles.cta]]}>Request Invite</button>
+      <span class={styles.copyright}>© Easybank. All Rights Reserved</span>
+    </div>
+  </div>
+  <div class={styles.attribution}>
+    <span>
+      Challenge by{' '}
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"> Frontend Mentor</a>
+      .{' '}
+    </span>
+    <span>
+      Coded by <a href="https://github.com/AntoineC-dev">Antoine C</a>.
+    </span>
+  </div>
+</footer>
