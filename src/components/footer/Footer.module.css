@@ -29,13 +29,6 @@
   transition: var(--transition-color);
 }
 
-.logoLink:hover,
-.logoLink:focus-visible,
-.socialLink:hover,
-.socialLink:focus-visible {
-  color: var(--color-active);
-}
-
 .socials {
   display: flex;
   align-items: center;
@@ -54,11 +47,6 @@
   font-size: var(--fs-sm);
   color: var(--color-idle);
   transition: color 150ms linear;
-}
-
-.navLink:hover,
-.navLink:focus-visible {
-  color: var(--color-active);
 }
 
 .right {
@@ -88,9 +76,25 @@
   transition: color 150ms linear;
 }
 
-.attribution a:hover,
+.cta:focus-visible {
+  outline: var(--outline-focus-light);
+}
+
+.logoLink:focus-visible,
+.socialLink:focus-visible,
+.navLink:focus-visible,
 .attribution a:focus-visible {
+  outline: var(--outline-focus-light);
   color: var(--color-active);
+}
+
+@media (hover: hover) {
+  .logoLink:hover,
+  .socialLink:hover,
+  .navLink:hover,
+  .attribution a:hover {
+    color: var(--color-active);
+  }
 }
 
 @media (--screen-md) {
