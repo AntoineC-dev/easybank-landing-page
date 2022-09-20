@@ -203,6 +203,8 @@ a:not([class]) {
 }
 
 .btn-gradient {
+  position: relative;
+  isolation: isolate;
   cursor: pointer;
   padding-inline: var(--space-lg);
   height: 44px;
@@ -210,13 +212,22 @@ a:not([class]) {
   color: hsl(var(--clr-neutral-100));
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
+  background-color: hsl(var(--clr-neutral-100));
+}
+
+.btn-gradient::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: var(--br-lg);
   background: var(--gradient-default);
   transition: opacity 250ms ease-in-out;
 }
 
-.btn-gradient:hover,
-.btn-gradient:focus-visible {
-  opacity: 0.4;
+.btn-gradient:hover::after,
+.btn-gradient:focus-visible::after {
+  opacity: 0.6;
 }
 
 /* ----------------- */
