@@ -1,0 +1,30 @@
+---
+import { FEATURES } from '$data/features';
+
+import styles from './Features.module.css';
+---
+
+<section class={styles.section}>
+  <div class:list={['container', [styles.container]]}>
+    <header class={styles.header}>
+      <h2>Why choose Easybank?</h2>
+      <p>
+        We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never
+        before.
+      </p>
+    </header>
+    <div class={styles.features}>
+      {
+        FEATURES.map((feature) => (
+          <article class={styles.feature}>
+            <div class={styles.featureImg}>
+              <img src={feature.image} alt="" />
+            </div>
+            <h3 class={styles.featureTitle}>{feature.title}</h3>
+            <p class={styles.featureText}>{feature.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
