@@ -236,6 +236,7 @@ body {
   color: hsl(var(--clr-primary));
   font-weight: var(--fw-light);
   line-height: var(--lh-sm);
+  letter-spacing: var(--ls-sm);
 }
 
 *:focus-visible {
