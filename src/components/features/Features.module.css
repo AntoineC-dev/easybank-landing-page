@@ -2,9 +2,6 @@
   background-color: hsl(var(--clr-neutral-300));
   padding-inline: var(--gutters-inline);
   padding-block: var(--space-2xl);
-}
-
-.container {
   text-align: center;
 }
 
@@ -45,6 +42,7 @@
 }
 
 .featureText {
+  font-size: var(--fs-sm);
   max-width: 35ch;
 }
 
@@ -55,14 +53,32 @@
 }
 
 @media (--screen-lg) {
-  .container {
+  .section {
+    padding-block: var(--space-4xl);
     text-align: start;
-  }
-  .features {
-    grid-template-columns: repeat(4, 1fr);
   }
   .header,
   .feature {
     justify-items: start;
+  }
+
+  .header {
+    margin-bottom: 4.5rem;
+  }
+
+  .header p {
+    font-size: var(--fs-md);
+  }
+
+  .features {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .featureTitle {
+    margin-block: var(--space-xl) var(--space-md);
+  }
+
+  .featureText {
+    font-size: var(--fs-base);
   }
 }
