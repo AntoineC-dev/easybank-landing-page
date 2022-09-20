@@ -31,6 +31,7 @@ import styles from './Navbar.module.css';
 </header>
 
 <script>
+  import { trapFocus } from '$utils/trapFocus';
   const nav = document.getElementById('primary-nav') as HTMLDivElement;
   const navToggle = document.getElementById('nav-toggle') as HTMLButtonElement;
 
@@ -38,7 +39,9 @@ import styles from './Navbar.module.css';
     const next = navToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
     navToggle.setAttribute('aria-expanded', next);
     nav.setAttribute('data-visible', next);
+    handleTrapFocus(next === 'true');
   };
 
+  const handleTrapFocus = trapFocus(nav, navToggle, handleNavToggle);
   navToggle.addEventListener('click', handleNavToggle);
 </script>
