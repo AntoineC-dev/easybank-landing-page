@@ -40,7 +40,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/easybank-landing-page-astro-typescript-postcss-iNp4_hP-uf](https://www.frontendmentor.io/solutions/easybank-landing-page-astro-typescript-postcss-iNp4_hP-uf)
 - Live Site URL: [https://easybank-landing-page-acdev.vercel.app/](https://easybank-landing-page-acdev.vercel.app/)
 
 ## My process
