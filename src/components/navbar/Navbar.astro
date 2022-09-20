@@ -1,5 +1,5 @@
 ---
-import logo from '$assets/logo.svg';
+import { Icon } from 'astro-icon';
 import { NAVIGATION_ITEMS } from '$data/navigation';
 
 import styles from './Navbar.module.css';
@@ -7,8 +7,8 @@ import styles from './Navbar.module.css';
 
 <header class={styles.header}>
   <div class:list={['container', [styles.container]]}>
-    <a href="#" class={styles.logo}>
-      <img src={logo} alt="Easybank Logo" />
+    <a href="#" class={styles.logo} aria-label="Easybank Logo">
+      <Icon class={styles.logoSvg} name="logo" />
     </a>
     <button id="nav-toggle" aria-controls="nav-items" aria-expanded="false" class={styles.navToggle}>
       <span class="sr-only">Menu</span>

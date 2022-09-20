@@ -14,6 +14,16 @@
 .logo {
   display: block;
   align-self: center;
+  color: hsl(var(--clr-primary));
+}
+.logo:hover,
+.logo:focus-visible {
+  color: hsl(var(--clr-secondary));
+}
+
+.logoSvg {
+  height: 20px;
+  transition: color 150ms linear;
 }
 
 .navToggle {
