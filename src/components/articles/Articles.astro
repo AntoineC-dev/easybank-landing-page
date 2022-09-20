@@ -1,0 +1,27 @@
+---
+import { ARTICLES } from '$data/articles';
+
+import styles from './Articles.module.css';
+---
+
+<section class={styles.section}>
+  <div class="container">
+    <h2 class={styles.title}>Latests Articles</h2>
+    <div class={styles.articles}>
+      {
+        ARTICLES.map((article) => (
+          <article class={styles.article}>
+            <img class={styles.articleImg} src={article.image.src} alt={article.image.alt} />
+            <div class={styles.articleContent}>
+              <span class={styles.articleAuthor}>By {article.author}</span>
+              <a href={article.slug} class={styles.articleTitle}>
+                {article.title}
+              </a>
+              <p class={styles.articleText}>{article.text}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
