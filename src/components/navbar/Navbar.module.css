@@ -16,9 +16,15 @@
   align-self: center;
   color: hsl(var(--clr-primary));
 }
-.logo:hover,
+
 .logo:focus-visible {
   color: hsl(var(--clr-secondary));
+}
+
+@media (hover: hover) {
+  .logo:hover {
+    color: hsl(var(--clr-secondary));
+  }
 }
 
 .logoSvg {
@@ -121,12 +127,19 @@
     transition: transform 250ms linear;
   }
 
-  .navLink:hover,
   .navLink:focus-visible {
     color: hsl(var(--clr-primary));
   }
-  .navLink:hover::after,
   .navLink:focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (--desktop-nav) and (hover: hover) {
+  .navLink:hover {
+    color: hsl(var(--clr-primary));
+  }
+  .navLink:hover::after {
     transform: scaleX(1);
   }
 }

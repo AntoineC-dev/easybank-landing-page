@@ -48,12 +48,18 @@
   font-weight: var(--fw-light);
   line-height: var(--lh-base);
   font-size: var(--fs-base);
+  color: inherit;
   transition: color 150ms linear;
 }
 
-.articleTitle:hover,
-.articleTitle:focus-visible {
+.articleLink:focus-visible {
   color: hsl(var(--clr-secondary));
+}
+
+@media (hover: hover) {
+  .articleLink:hover {
+    color: hsl(var(--clr-secondary));
+  }
 }
 
 .articleText {

@@ -223,9 +223,14 @@ a:not([class]) {
   transition: opacity 250ms ease-in-out;
 }
 
-.btn-gradient:hover::after,
 .btn-gradient:focus-visible::after {
   opacity: 0.6;
+}
+
+@media (hover: hover) {
+  .btn-gradient:hover::after {
+    opacity: 0.6;
+  }
 }
 
 /* ----------------- */
